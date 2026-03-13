@@ -52,31 +52,38 @@ var n1, n2, total : Real;
 begin
 
   if lbl_operacao.Caption = '+' then
+  begin
     n1 := StrToFloat(edt_vlr_1.Text);
     n2 := StrToFloat(edt_vlr_2.Text);
     total := n1 + n2;
     lbl_resultado.Caption :=  FloatToStr(total);
+  end;
 
-  else
-    lbl_operacao.Caption = '-' then
+  if lbl_operacao.Caption = '-' then
+  begin
     n1 := StrToFloat(edt_vlr_1.Text);
     n2 := StrToFloat(edt_vlr_2.Text);
     total := n1 - n2;
     lbl_resultado.Caption :=  FloatToStr(total);
+  end;
 
-  else
-    lbl_operacao.Caption = 'x' then
+
+  if lbl_operacao.Caption = 'x' then
+  begin
     n1 := StrToFloat(edt_vlr_1.Text);
     n2 := StrToFloat(edt_vlr_2.Text);
     total := n1 * n2;
     lbl_resultado.Caption :=  FloatToStr(total);
+  end;
 
-  else
-    lbl_operacao.Caption = '/' then
+
+  if lbl_operacao.Caption = '/' then
+  begin
     n1 := StrToFloat(edt_vlr_1.Text);
     n2 := StrToFloat(edt_vlr_2.Text);
     total := n1 / n2;
     lbl_resultado.Caption :=  FloatToStr(total);
+  end;
 
 end;
 
