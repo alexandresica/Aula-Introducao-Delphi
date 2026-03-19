@@ -108,7 +108,7 @@ object frmAtividade04: TfrmAtividade04
   object lbl_texto: TLabel
     Left = 32
     Top = 344
-    Width = 313
+    Width = 385
     Height = 153
     AutoSize = False
     Font.Charset = DEFAULT_CHARSET
