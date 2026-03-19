@@ -6,7 +6,8 @@ uses
   UExemplo01 in 'UExemplo01.pas' {frmExemplo01},
   UAtividade01 in 'UAtividade01.pas' {frmAtividade01},
   UExemplo02 in 'UExemplo02.pas' {frmExemplo02},
-  UAtividade02 in 'UAtividade02.pas' {frmAtividade02};
+  UAtividade02 in 'UAtividade02.pas' {frmAtividade02},
+  UAtividade03 in 'UAtividade03.pas' {frmAtividade03};
 
 {$R *.res}
 
@@ -18,5 +19,6 @@ begin
   Application.CreateForm(TfrmAtividade01, frmAtividade01);
   Application.CreateForm(TfrmExemplo02, frmExemplo02);
   Application.CreateForm(TfrmAtividade02, frmAtividade02);
+  Application.CreateForm(TfrmAtividade03, frmAtividade03);
   Application.Run;
 end.
