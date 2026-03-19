@@ -36,8 +36,8 @@ begin
   nome := edt_nome.Text;
   idade := StrToInt(edt_idade.Text);
 
-  idadeFutura := idade + 28
-  mensagem :=  nome+ 'daqui a 28 anos você vai ter' + IntToStr(idadeFutura)+ 'anos!';
+  idadeFutura := idade + 28;
+  mensagem :=  nome+ ' daqui a 28 anos você vai ter ' + IntToStr(idadeFutura) +  ' anos!';
 
   lbl_Texto.Caption :=  mensagem
 end;
