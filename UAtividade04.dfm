@@ -94,8 +94,8 @@ object frmAtividade04: TfrmAtividade04
   object lbl_exibeMedia: TLabel
     Left = 616
     Top = 240
-    Width = 70
-    Height = 53
+    Width = 9
+    Height = 45
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -32
@@ -123,7 +123,7 @@ object frmAtividade04: TfrmAtividade04
     Left = 176
     Top = 54
     Width = 377
-    Height = 67
+    Height = 53
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -32
@@ -137,6 +137,7 @@ object frmAtividade04: TfrmAtividade04
     Top = 240
     Width = 81
     Height = 53
+    Alignment = taCenter
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -32
@@ -150,6 +151,7 @@ object frmAtividade04: TfrmAtividade04
     Top = 240
     Width = 81
     Height = 53
+    Alignment = taCenter
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -32
@@ -163,6 +165,7 @@ object frmAtividade04: TfrmAtividade04
     Top = 240
     Width = 81
     Height = 53
+    Alignment = taCenter
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -32
@@ -176,6 +179,7 @@ object frmAtividade04: TfrmAtividade04
     Top = 240
     Width = 81
     Height = 53
+    Alignment = taCenter
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -32
@@ -188,11 +192,11 @@ object frmAtividade04: TfrmAtividade04
     Left = 584
     Top = 54
     Width = 129
-    Height = 88
+    Height = 83
     Caption = 'Calcular Media'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -32
+    Font.Height = -24
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False

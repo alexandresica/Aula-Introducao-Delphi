@@ -49,7 +49,7 @@ begin
   n4 := StrToFloat(edt_n4.Text);
 
   media := (n1 + n2 + n3 + n4) / 4;
-  texto := 'Aluno(a): '+ nome + ' Média = '+ FloatToStr(media);
+  texto := 'Aluno(a): '+ nome + sLineBreak + 'Média = '+ FloatToStr(media);
 
   lbl_exibeMedia.Caption := FloatToStr(media);
 end;
