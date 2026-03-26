@@ -124,6 +124,7 @@ object frmAtividade04: TfrmAtividade04
     Top = 54
     Width = 377
     Height = 53
+    Alignment = taCenter
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -32
