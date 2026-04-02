@@ -3,8 +3,8 @@ object frmAtividade05: TfrmAtividade05
   Top = 0
   BorderStyle = bsDialog
   Caption = 'Atividade 5'
-  ClientHeight = 441
-  ClientWidth = 624
+  ClientHeight = 475
+  ClientWidth = 637
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -12,6 +12,7 @@ object frmAtividade05: TfrmAtividade05
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poScreenCenter
+  OnShow = FormShow
   TextHeight = 15
   object lbl_login: TLabel
     Left = 232
@@ -58,6 +59,7 @@ object frmAtividade05: TfrmAtividade05
     Width = 129
     Height = 23
     TabOrder = 0
+    OnKeyPress = edt_userKeyPress
   end
   object edt_password: TEdit
     Left = 232
@@ -66,6 +68,7 @@ object frmAtividade05: TfrmAtividade05
     Height = 23
     TabOrder = 1
     OnChange = edt_passwordChange
+    OnKeyPress = edt_passwordKeyPress
   end
   object btn_logon: TButton
     Left = 256
@@ -75,5 +78,15 @@ object frmAtividade05: TfrmAtividade05
     Caption = 'Acessar'
     TabOrder = 2
     OnClick = btn_logonClick
+  end
+  object btn_exibirpass: TButton
+    Left = 359
+    Top = 248
+    Width = 34
+    Height = 23
+    Caption = 'exibir'
+    TabOrder = 3
+    OnMouseActivate = btn_exibirpassMouseActivate
+    OnMouseLeave = btn_exibirpassMouseLeave
   end
 end
