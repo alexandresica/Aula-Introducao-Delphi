@@ -13,11 +13,20 @@ object frmAtividade06: TfrmAtividade06
   TextHeight = 15
   object btnMensagem: TButton
     Left = 56
-    Top = 168
-    Width = 121
-    Height = 41
+    Top = 152
+    Width = 137
+    Height = 105
     Caption = 'MessageBox'
     TabOrder = 0
     OnClick = btnMensagemClick
+  end
+  object btnInput: TButton
+    Left = 432
+    Top = 152
+    Width = 137
+    Height = 105
+    Caption = 'InputBox'
+    TabOrder = 1
+    OnClick = btnInputClick
   end
 end
