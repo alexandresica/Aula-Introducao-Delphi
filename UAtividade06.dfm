@@ -1,5 +1,5 @@
 object frmAtividade06: TfrmAtividade06
-  Left = 0
+  Left = 14
   Top = 0
   Caption = 'Atividade 6'
   ClientHeight = 441
@@ -10,6 +10,7 @@ object frmAtividade06: TfrmAtividade06
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Position = poDesigned
   TextHeight = 15
   object btnMensagem: TButton
     Left = 56

@@ -10,6 +10,7 @@ object frmPrincipal: TfrmPrincipal
   Font.Height = -21
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Position = poDesigned
   WindowState = wsMaximized
   TextHeight = 30
   object btnExemplo01: TButton
@@ -83,5 +84,14 @@ object frmPrincipal: TfrmPrincipal
     Caption = 'Atividade 6'
     TabOrder = 7
     OnClick = btnAtividade06Click
+  end
+  object btnAtividade07: TButton
+    Left = 424
+    Top = 96
+    Width = 150
+    Height = 35
+    Caption = 'Atividade 7'
+    TabOrder = 8
+    OnClick = btnAtividade07Click
   end
 end
