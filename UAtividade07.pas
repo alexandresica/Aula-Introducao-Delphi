@@ -31,9 +31,11 @@ implementation
 
 procedure TfrmAtividade07.btn_calcSalarioClick(Sender: TObject);
 var
-  inss, iR, sindicato, fgts, salarBruto, salarLiquido, salarioHora, horaMes, 
-  descontos  : Real;
-  nomeFuncionario : String;
+  inss, iR, sindicato, fgts, salarBruto, salarLiquido : Real;
+  salarioHora, horaMes, descontos  : Real;
+  nomeFuncionario, salarBrutoMsg, irMsg, inssMsg, sindicatoMsg : String;
+  totalDescontos, salarLiquidoMsg, mensagem, fgtsMsg : String;
+
 begin
   nomeFuncionario := edt_nome.Text;
   salarioHora := StrToFloat(edt_salarioHora.Text);
@@ -49,28 +51,43 @@ begin
   if (salarBruto <= 1900) then
   begin
     iR := 0;
+    irMsg := '(-) IR(Isento): R$ '+FormatFloat('0.00', iR);
   end
   else if (salarBruto <= 3500) then
   begin
-    iR := 0.05;
+    iR := salarBruto * 0.05;
+    irMsg := '(-) IR(5%): R$ '+FormatFloat('0.00', iR);
   end
   else if (salarBruto <= 7500) then
   begin
-    iR := 0.10;
+    iR := salarBruto * 0.10;
+    irMsg := '(-) IR(10%): R$ '+FormatFloat('0.00', iR);
   end
   else if (salarBruto > 3500) then
   begin
-    iR := 0.20;
+    iR := salarBruto * 0.20;
+    irMsg := '(-) IR(20%): R$ '+FormatFloat('0.00', iR);
   end;
 
   descontos := inss + iR + sindicato;
   salarLiquido := salarBruto - descontos;
 
-  MessageBox(Application.Handle, Pchar('Funcionario: '+nomeFuncionario +sLineBreak
-                                        +'Salario Bruto: R$ '+FormatFloat('0.00', salarBruto)+sLineBreak
-                                        + '(-) IR: '+FormatFloat('0.00"%"', iR * 100)+sLineBreak
-                                        +'(-) '),
-  'Confimação:', MB_OK + MB_DEFBUTTON1)
+  salarBrutoMsg := 'Salario Bruto: R$ '+FormatFloat('0.00', salarBruto);
+  inssMsg := '(-) INSS(10%): R$ '+FormatFloat('0.00', inss);
+  sindicatoMsg := '(-) Sindicato(3%): R$ '+FormatFloat('0.00', sindicato);
+  fgtsMsg := 'FGTS(11%): R$ '+FormatFloat('0.00', fgts);
+  totalDescontos := 'Total de Descontos: R$ '+FormatFloat('0.00', descontos);
+  salarLiquidoMsg := 'Salário Liquido: R$ '+FormatFloat('0.00', salarLiquido);
+
+  mensagem := 'Nome do Funcionario: '+nomeFuncionario+sLineBreak+salarBrutoMsg
+  +sLineBreak+irMsg+sLineBreak+inssMsg+sLineBreak+sindicatoMsg+sLineBreak+fgtsMsg
+  +sLineBreak+totalDescontos+sLineBreak+salarLiquidoMsg;
+
+  {MessageBox(Application.Handle,PChar(mensagem),
+  'Confimação:', MB_OK + MB_DEFBUTTON1);}
+
+  ShowMessage(mensagem);
+
 end;
 
 end.
