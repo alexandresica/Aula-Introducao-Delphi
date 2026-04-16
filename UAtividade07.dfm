@@ -16,8 +16,8 @@ object frmAtividade07: TfrmAtividade07
   object lbl_nome: TLabel
     Left = 24
     Top = 70
-    Width = 63
-    Height = 33
+    Width = 74
+    Height = 32
     Caption = 'Nome'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
@@ -29,8 +29,8 @@ object frmAtividade07: TfrmAtividade07
   object lbl_salariohora: TLabel
     Left = 24
     Top = 171
-    Width = 65
-    Height = 33
+    Width = 79
+    Height = 32
     Caption = '$/hora'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
@@ -42,8 +42,8 @@ object frmAtividade07: TfrmAtividade07
   object lbl_horames: TLabel
     Left = 24
     Top = 272
-    Width = 110
-    Height = 33
+    Width = 134
+    Height = 32
     Caption = 'Horas M'#234's'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
@@ -53,9 +53,9 @@ object frmAtividade07: TfrmAtividade07
     ParentFont = False
   end
   object edt_nome: TEdit
-    Left = 93
+    Left = 128
     Top = 62
-    Width = 436
+    Width = 401
     Height = 46
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -69,7 +69,7 @@ object frmAtividade07: TfrmAtividade07
     Left = 176
     Top = 168
     Width = 353
-    Height = 41
+    Height = 40
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -28
@@ -82,7 +82,7 @@ object frmAtividade07: TfrmAtividade07
     Left = 176
     Top = 269
     Width = 353
-    Height = 41
+    Height = 40
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -28

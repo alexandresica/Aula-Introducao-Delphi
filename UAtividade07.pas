@@ -35,20 +35,24 @@ var
   descontos  : Real;
   nomeFuncionario : String;
 begin
-  inss := 0.10;
-  sindicato := 0.3;
-  fgts := 0.11;
+  nomeFuncionario := edt_nome.Text;
   salarioHora := StrToFloat(edt_salarioHora.Text);
   horaMes := StrToFloat(edt_horaMes.Text);
-
   salarBruto := salarioHora * horaMes;
+  inss := salarBruto * 0.10;
+  sindicato := salarBruto * 0.03;
+  fgts := salarBruto * 0.11;
+
+
+ { Calculo do Imposto de Renda de acordo com faixa saarial }
+
   if (salarBruto <= 1900) then
   begin
     iR := 0;
   end
   else if (salarBruto <= 3500) then
   begin
-    iR := 0.5;
+    iR := 0.05;
   end
   else if (salarBruto <= 7500) then
   begin
@@ -59,12 +63,13 @@ begin
     iR := 0.20;
   end;
 
-  fgts := salarBruto * 0.11;
   descontos := inss + iR + sindicato;
   salarLiquido := salarBruto - descontos;
 
-
-  MessageBox(Application.Handle, Pchar('salario'+FloatToStr(fgts)),
+  MessageBox(Application.Handle, Pchar('Funcionario: '+nomeFuncionario +sLineBreak
+                                        +'Salario Bruto: R$ '+FormatFloat('0.00', salarBruto)+sLineBreak
+                                        + '(-) IR: '+FormatFloat('0.00"%"', iR * 100)+sLineBreak
+                                        +'(-) '),
   'Confimação:', MB_OK + MB_DEFBUTTON1)
 end;
 
