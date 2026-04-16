@@ -1,6 +1,7 @@
 object frmAtividade07: TfrmAtividade07
   Left = 0
   Top = 0
+  BorderStyle = bsDialog
   Caption = 'Atividade 7'
   ClientHeight = 444
   ClientWidth = 555
@@ -10,6 +11,7 @@ object frmAtividade07: TfrmAtividade07
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Position = poScreenCenter
   TextHeight = 15
   object lbl_nome: TLabel
     Left = 24
@@ -63,10 +65,10 @@ object frmAtividade07: TfrmAtividade07
     ParentFont = False
     TabOrder = 0
   end
-  object edt_salariohora: TEdit
-    Left = 224
+  object edt_salarioHora: TEdit
+    Left = 176
     Top = 168
-    Width = 305
+    Width = 353
     Height = 41
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
@@ -76,10 +78,10 @@ object frmAtividade07: TfrmAtividade07
     ParentFont = False
     TabOrder = 1
   end
-  object edt_horames: TEdit
-    Left = 224
+  object edt_horaMes: TEdit
+    Left = 176
     Top = 269
-    Width = 305
+    Width = 353
     Height = 41
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
@@ -102,5 +104,6 @@ object frmAtividade07: TfrmAtividade07
     Font.Style = []
     ParentFont = False
     TabOrder = 3
+    OnClick = btn_calcSalarioClick
   end
 end
