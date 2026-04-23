@@ -16,6 +16,9 @@ type
     edt_horaMes: TEdit;
     btn_calcSalario: TButton;
     procedure btn_calcSalarioClick(Sender: TObject);
+    procedure edt_nomeKeyPress(Sender: TObject; var Key: Char);
+    procedure edt_salarioHoraKeyPress(Sender: TObject; var Key: Char);
+    procedure edt_horaMesKeyPress(Sender: TObject; var Key: Char);
   private
     { Private declarations }
   public
@@ -88,6 +91,31 @@ begin
 
   ShowMessage(mensagem);
 
+end;
+
+procedure TfrmAtividade07.edt_horaMesKeyPress(Sender: TObject; var Key: Char);
+begin
+if( Key = #13 ) then
+  begin
+   btn_calcSalario.SetFocus;
+  end;
+end;
+
+procedure TfrmAtividade07.edt_nomeKeyPress(Sender: TObject; var Key: Char);
+begin
+if( Key = #13 ) then
+  begin
+   edt_salarioHora.SetFocus;
+  end;
+end;
+
+procedure TfrmAtividade07.edt_salarioHoraKeyPress(Sender: TObject;
+  var Key: Char);
+begin
+if( Key = #13 ) then
+  begin
+   edt_horaMes.SetFocus;
+  end;
 end;
 
 end.

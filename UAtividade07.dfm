@@ -64,6 +64,7 @@ object frmAtividade07: TfrmAtividade07
     Font.Style = []
     ParentFont = False
     TabOrder = 0
+    OnKeyPress = edt_nomeKeyPress
   end
   object edt_salarioHora: TEdit
     Left = 176
@@ -77,6 +78,7 @@ object frmAtividade07: TfrmAtividade07
     Font.Style = []
     ParentFont = False
     TabOrder = 1
+    OnKeyPress = edt_salarioHoraKeyPress
   end
   object edt_horaMes: TEdit
     Left = 176
@@ -90,6 +92,7 @@ object frmAtividade07: TfrmAtividade07
     Font.Style = []
     ParentFont = False
     TabOrder = 2
+    OnKeyPress = edt_horaMesKeyPress
   end
   object btn_calcSalario: TButton
     Left = 40
