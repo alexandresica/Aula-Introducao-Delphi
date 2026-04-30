@@ -35,10 +35,19 @@ begin
     inc(contarErro);
     if (contarErro = 3) then
     begin
+      Application.MessageBox('Você errou a três vezes, o programa ' +
+      'será fechado', 'AVISO', 16);
+      Application.Terminate;
       Break;
     end;
     vDigitado := InputBox('Acesso ao sistema',
     'Digite a senha correta' + #13 + 'para acessar o sistema','');
+
+     if (vDigitado = '') then
+    begin
+      Close;
+    end;
+
   until (senha = vDigitado);
 
   lblMensagem.Caption := 'Você errou a senha ' + IntToStr(contarErro) + ' vezes';
