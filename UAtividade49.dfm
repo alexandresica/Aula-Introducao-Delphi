@@ -1,15 +1,14 @@
-object frmAtividade48: TfrmAtividade48
+object frmAtividade49: TfrmAtividade49
   Left = 0
   Top = 0
-  Caption = 'Atividade 48'
-  ClientHeight = 119
-  ClientWidth = 114
+  Caption = 'Atividade 49'
+  ClientHeight = 441
+  ClientWidth = 624
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
-  OnShow = FormShow
   TextHeight = 15
 end

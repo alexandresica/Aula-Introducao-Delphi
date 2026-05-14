@@ -8,9 +8,8 @@ uses
 
 type
   TfrmAtividade48 = class(TForm)
-    Timer: TTimer;
     procedure FormShow(Sender: TObject);
-    procedure TimerTimer(Sender: TObject);
+
   private
     { Private declarations }
   public
@@ -25,14 +24,6 @@ implementation
 {$R *.dfm}
 
 procedure TfrmAtividade48.FormShow(Sender: TObject);
-begin
-
- Timer.Interval := 10;
- Timer.Enabled := True;
-
-end;
-
-procedure TfrmAtividade48.TimerTimer(Sender: TObject);
 var
 nDigitado, controle : String;
   contador: Integer;
@@ -41,7 +32,7 @@ nDigitado, controle : String;
 begin
 
 contador := 0;
-controle := '1';
+soma := 0;
 
 repeat
   nDigitado := InputBox('Atividade 48',
@@ -52,7 +43,7 @@ repeat
     soma := soma + numero;
 
 
-until controle = '0' ;
+until nDigitado = '0' ;
 
 media := soma / contador;
 
@@ -61,6 +52,12 @@ MessageBox(Application.Handle,Pchar(
 'Soma: '+FloatToStr(soma)+#13+
 'Media: '+FloatToStr(media)), 'CSM0',MB_OK);
   Close;
+begin
+
+end;
+
+
+
 end;
 
 end.
