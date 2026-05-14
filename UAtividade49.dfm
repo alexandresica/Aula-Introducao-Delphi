@@ -10,5 +10,6 @@ object frmAtividade49: TfrmAtividade49
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnCreate = FormCreate
   TextHeight = 15
 end
