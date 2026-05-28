@@ -218,5 +218,6 @@
     Font.Style = []
     ParentFont = False
     TabOrder = 7
+    OnClick = btnLimparClick
   end
 end
