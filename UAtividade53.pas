@@ -46,18 +46,36 @@ implementation
 procedure TfrmCadastro.btnCadastrarClick(Sender: TObject);
 var
 
-nome, endereco : String;
+nome, endereco, dados : String;
 
 begin
-if  (nome or endereco = null) then
+
+nome := edtNome.Text;
+endereco := edtEndereco.Text;
+
+if  (nome = '') then
 begin
-  ShowMessage('O nome não pode ser vazio!')
+  ShowMessage('Nome não pode ser vazio!')
+end
+
+
+else if  (endereco = '') then
+begin
+  ShowMessage('Endereço não pode ser vazio!')
+end
+
+else if ((rbtFem.Checked = False) and (rbtMasc.Checked = False)) then
+begin
+   ShowMessage('Sexo não pode ser vazio!')
+end
+
+else if (cbbCidade.Items[cbbCidade.ItemIndex] = '' ) then
+begin
+   ShowMessage('Cidade não pode ser vazio!')
 end;
 
-if  (endereco = '') then
-begin
-  ShowMessage('O endereço não pode ser vazio!')
-end;
+dados := 'Nome: '+nome+sLineBreak+'Endereço: '+endereco+sLineBreak
+
 
 
 end;
