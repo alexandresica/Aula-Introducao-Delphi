@@ -51,12 +51,11 @@ nome, endereco, dados : String;
 contador, registro : Integer;
 
 begin
-registro := 0;
 contador := 0;
 nome := edtNome.Text;
 endereco := edtEndereco.Text;
 
-inc(registro);
+Inc(registro);
 dados := 'Registro: n°' +IntToStr(registro) +sLineBreak;
 if  (nome = '') then
 begin
@@ -130,6 +129,8 @@ begin
   Close;
 
 end;
+
+dados := dados + sLineBreak;
 
 mmoRegistros.Lines.Add(dados)
 
