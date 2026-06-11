@@ -3,7 +3,8 @@ unit UAtividade53;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
 
 type
@@ -27,11 +28,11 @@ type
     btnCadastrar: TButton;
     btnLimpar: TButton;
     procedure btnCadastrarClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
     procedure btnLimparClick(Sender: TObject);
   private
     { Private declarations }
-    nRegistro : Integer;
-
+    nRegistros: Integer;
   public
     { Public declarations }
   end;
@@ -43,102 +44,126 @@ implementation
 
 {$R *.dfm}
 
-
 procedure TfrmCadastro.btnCadastrarClick(Sender: TObject);
 var
-
-nome, endereco, dados : String;
-contador, registro : Integer;
-
+  nome, endereco, sexo, cidade, frutas, cadastro, erros: String;
+  validacao: Boolean;
 begin
-contador := 0;
-nome := edtNome.Text;
-endereco := edtEndereco.Text;
+  validacao := true;
+  erros := '';
 
-Inc(registro);
-dados := 'Registro: n°' +IntToStr(registro) +sLineBreak;
-if  (nome = '') then
-begin
-  ShowMessage('Nome não pode ser vazio!')
-end
+  if edtNome.Text = '' then
+  begin
+    validacao := false;
+    erros := erros + '- Digite o nome para realizar o cadastro' + sLineBreak;
+  end
+  else
+  begin
+    nome := edtNome.Text;
+  end;
 
+  if edtEndereco.Text = '' then
+  begin
+    validacao := false;
+    erros := erros + '- Digite o endereço para realizar o cadastro' +
+      sLineBreak;
+  end
+  else
+  begin
+    endereco := edtEndereco.Text;
+  end;
 
-else if  (endereco = '') then
-begin
-  ShowMessage('Endereço não pode ser vazio!')
-end
+  // sexo
+  sexo := 'Indefinido';
+  if rbtMasc.Checked = true then
+  begin
+    sexo := 'Masculino';
+  end;
+  if rbtFem.Checked = true then
+  begin
+    sexo := 'Feminino';
+  end;
 
-else if ((rbtFem.Checked = False) and (rbtMasc.Checked = False)) then
-begin
-   ShowMessage('Sexo não pode ser vazio!')
-end
+  if cbbCidade.ItemIndex = -1 then
+  begin
+    validacao := false;
+    erros := erros + '- Escolha a cidade para realizar o cadastro' + sLineBreak;
+  end
+  else
+  begin
+    cidade := cbbCidade.Items[cbbCidade.ItemIndex];
+  end;
 
-else if (cbbCidade.Items[cbbCidade.ItemIndex] = '' ) then
-begin
-   ShowMessage('Cidade não pode ser vazio!')
-end;
+  // Frutas
+  frutas := '';
+  if ccbMaca.Checked = true then
+  begin
+    frutas := frutas + 'Maçã' + sLineBreak;
+  end;
+  if ccbBanana.Checked = true then
+  begin
+    frutas := frutas + 'Banana' + sLineBreak;
+  end;
+  if ccbUva.Checked = true then
+  begin
+    frutas := frutas + 'Uva' + sLineBreak;
+  end;
+  if ccbMorango.Checked = true then
+  begin
+    frutas := frutas + 'Morango' + sLineBreak;
+  end;
+  if ccbJaca.Checked = true then
+  begin
+    frutas := frutas + 'Jaca' + sLineBreak;
+  end;
+  if ccbManga.Checked = true then
+  begin
+    frutas := frutas + 'Manga' + sLineBreak;
+  end;
 
-dados := dados + 'Nome: '+nome+sLineBreak+'Endereço: '+endereco+sLineBreak;
+  if frutas = '' then
+  begin
+    frutas := 'Nenhuma fruta selecionada';
+  end;
 
-if(rbtMasc.Checked = True) then
-begin
-  dados := dados + 'Sexo: Masculino' +sLineBreak;
-end
-else if(rbtFem.Checked = True) then
-begin
-  dados := dados + 'Sexo: Feminino' +sLineBreak;
-end;
+  if validacao = true then
+  begin
+    Inc(nRegistros);
+    cadastro := 'Registro nº ' + IntToStr(nRegistros) + sLineBreak + 'Nome: ' + nome + sLineBreak +
+      'Endereço: ' + endereco + sLineBreak + 'Sexo: ' + sexo + sLineBreak +
+      'Cidade: ' + cidade + sLineBreak + 'Frutas favoritas' + sLineBreak +
+      frutas + sLineBreak;
 
-dados := dados + 'Cidade: ' + cbbCidade.Items[cbbCidade.ItemIndex] +sLineBreak;
+    edtNome.Clear;
+    edtEndereco.Clear;
+    rbtMasc.Checked := false;
+    rbtFem.Checked := false;
+    cbbCidade.ItemIndex := -1;
+    ccbMaca.Checked := false;
+    ccbBanana.Checked := false;
+    ccbUva.Checked := false;
+    ccbMorango.Checked := false;
+    ccbJaca.Checked := false;
+    ccbManga.Checked := false;
 
-dados := dados + 'Frutas Favoritas: ' ;
-if (ccbBanana.Checked = True) then
-begin
-   dados := dados +sLineBreak+ 'Banana';
-   inc(contador);
-end;
-if (ccbJaca.Checked = True) then
-begin
-   dados := dados +sLineBreak+ 'Jaca';
-   inc(contador);
-end;
-if (ccbMaca.Checked = True) then
-begin
-   dados := dados +sLineBreak+ 'Maçã';
-   inc(contador);
-end;
-if (ccbManga.Checked = True) then
-begin
-   dados := dados +sLineBreak+ 'Manga';
-   inc(contador);
-end;
-if (ccbMorango.Checked = True) then
-begin
-   dados := dados +sLineBreak+ 'Morango';
-   inc(contador);
-end;
-if (ccbUva.Checked = True) then
-begin
-   dados := dados +sLineBreak+ 'Uva';
-   inc(contador);
-end;
-
-if (contador = 0) then
-begin
-  ShowMessage('Escolha uma Fruta!');
-  Close;
-
-end;
-
-dados := dados + sLineBreak;
-
-mmoRegistros.Lines.Add(dados)
+    mmoRegistros.Lines.Add(cadastro);
+  end
+  else
+  begin
+    Application.MessageBox(pChar(erros), 'Erro', MB_OK + MB_ICONERROR);
+  end;
 
 end;
 
 procedure TfrmCadastro.btnLimparClick(Sender: TObject);
 begin
-  mmoRegistros.Lines.Clear
+  mmoRegistros.Clear;
+  nRegistros := 0;
+end;
+
+procedure TfrmCadastro.FormShow(Sender: TObject);
+begin
+  nRegistros := 0;
 end;
 
 end.

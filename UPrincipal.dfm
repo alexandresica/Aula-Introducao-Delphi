@@ -2,8 +2,8 @@ object frmPrincipal: TfrmPrincipal
   Left = 0
   Top = 0
   Caption = 'Exemplo Componentes Aula Delphi'
-  ClientHeight = 496
-  ClientWidth = 755
+  ClientHeight = 462
+  ClientWidth = 785
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -77,8 +77,8 @@ object frmPrincipal: TfrmPrincipal
     OnClick = btnAtividade05Click
   end
   object btnAtividade06: TButton
-    Left = 424
-    Top = 24
+    Left = 224
+    Top = 360
     Width = 150
     Height = 35
     Caption = 'Atividade 6'
@@ -86,8 +86,8 @@ object frmPrincipal: TfrmPrincipal
     OnClick = btnAtividade06Click
   end
   object btnAtividade07: TButton
-    Left = 424
-    Top = 96
+    Left = 224
+    Top = 424
     Width = 150
     Height = 35
     Caption = 'Atividade 7'
@@ -96,7 +96,7 @@ object frmPrincipal: TfrmPrincipal
   end
   object btnAtividade46: TButton
     Left = 424
-    Top = 168
+    Top = 24
     Width = 150
     Height = 35
     Caption = 'Atividade 46'
@@ -114,7 +114,7 @@ object frmPrincipal: TfrmPrincipal
   end
   object btnAtividade47: TButton
     Left = 424
-    Top = 232
+    Top = 96
     Width = 150
     Height = 35
     Caption = 'Atividade 47'
@@ -123,7 +123,7 @@ object frmPrincipal: TfrmPrincipal
   end
   object btnAtividade48: TButton
     Left = 424
-    Top = 296
+    Top = 168
     Width = 150
     Height = 35
     Caption = 'Atividade 48'
@@ -132,7 +132,7 @@ object frmPrincipal: TfrmPrincipal
   end
   object btnAtividade49: TButton
     Left = 424
-    Top = 360
+    Top = 232
     Width = 150
     Height = 35
     Caption = 'Atividade 49'
@@ -141,11 +141,20 @@ object frmPrincipal: TfrmPrincipal
   end
   object btnAtividade53: TButton
     Left = 424
-    Top = 424
+    Top = 296
     Width = 150
     Height = 35
     Caption = 'Atividade 53'
     TabOrder = 14
     OnClick = btnAtividade53Click
+  end
+  object btnAtividade54: TButton
+    Left = 424
+    Top = 360
+    Width = 150
+    Height = 35
+    Caption = 'Atividade 54'
+    TabOrder = 15
+    OnClick = btnAtividade54Click
   end
 end
