@@ -14,6 +14,8 @@ type
     edt_senha: TEdit;
     btn_testar: TButton;
     procedure btn_testarClick(Sender: TObject);
+    procedure edt_usuarioKeyPress(Sender: TObject; var Key: Char);
+    procedure edt_senhaKeyPress(Sender: TObject; var Key: Char);
   private
     { Private declarations }
     procedure testarLogin;
@@ -31,6 +33,22 @@ implementation
 procedure TfrmAtividade66.btn_testarClick(Sender: TObject);
 begin
   testarLogin;
+end;
+
+procedure TfrmAtividade66.edt_senhaKeyPress(Sender: TObject; var Key: Char);
+begin
+if( Key = #13 ) then
+  begin
+   btn_testar.SetFocus;
+  end;
+end;
+
+procedure TfrmAtividade66.edt_usuarioKeyPress(Sender: TObject; var Key: Char);
+begin
+if( Key = #13 ) then
+  begin
+   edt_senha.SetFocus;
+  end;
 end;
 
 procedure TfrmAtividade66.testarLogin;
